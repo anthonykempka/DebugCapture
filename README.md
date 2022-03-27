@@ -38,7 +38,7 @@ int main()
 ```
 
 
-## Example debug capture 
+## Debug capture UI
 Here is what the UI looks like as various steps in usage.
 
 ### Dialog before selecting process
