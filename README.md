@@ -12,10 +12,10 @@ Windows applications can send debug output using the WIN32 API `OutputDebugStrin
 
 See more about `OutputDebugString()` below:
 
-ASCII version of the API: 
+#### ASCII version of the OutputDebugString() API: 
 https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringa 
 
-UNICODE version of the API: 
+#### UNICODE version of the OutputDebugString() API: 
 https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw 
 
 ### Example Windows application code using the OutputDebugString() API
