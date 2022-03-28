@@ -19,21 +19,31 @@ https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputde
 ```cpp
 int main()
 {
-    int i;
+    int i, ch;
     WCHAR wStr[100] = { 0 };
-    std::cout << "Hello World!\n";
 
     // This shows have to use the preprocessor macros to display compilation DATE and TIME
-    ::printf("This was built on " __DATE__ " " __TIME__ "\r\n");
+    cout << "This application was built on " __DATE__ " " __TIME__ "\n";
+    cout << "Hit Esc key to exit ... \n";
 
     for (i = 0; i < 100000; i++)
     {
         swprintf_s(wStr, L"Test application generating debug output using OutputDebugString()  loop count (%u)", i);
+        // Output to debug system
         ::OutputDebugString(wStr);
-        ::printf("%S\r\n", wStr);
+        // Output to console
+        wcout << wStr << endl;
+
         Sleep(1000);
+        // Check for keyboard input
+        if (_kbhit())
+        {
+            ch = _getch();
+            if (ch == 27)   // ESC key
+                break;
+        }
     }
-    
+    return (0);
 }
 ```
 
