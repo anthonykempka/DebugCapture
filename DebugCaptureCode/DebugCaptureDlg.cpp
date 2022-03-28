@@ -340,7 +340,6 @@ BOOL CDebugCaptureDlg::Start_Capture()
         m_hProcess = ::OpenProcess(PROCESS_VM_READ | SYNCHRONIZE | PROCESS_TERMINATE, TRUE, (DWORD)m_dwProcessId);
 
     if (m_hProcess == NULL) {
-
         DisplayErrors("Cannot open process.", ::GetLastError());
         m_bCapturing = FALSE;
         return (FALSE);
@@ -350,6 +349,8 @@ BOOL CDebugCaptureDlg::Start_Capture()
     if (!::DebugActiveProcess((DWORD)m_dwProcessId)) {
         DisplayErrors("Cannot debug process.", ::GetLastError());
         m_bCapturing = FALSE;
+        CloseHandle(m_hProcess);
+        m_hProcess = NULL;
         bRtn = FALSE;
     } else {
         sTemp.Format("Starting to capture debug output for process %s\r\n", m_sProcess_Name.GetBuffer());
