@@ -57,11 +57,11 @@ int main()
         // Output to console
         wcout << wStr << endl;
 
-        Sleep(1000);
+        ::Sleep(1000);
         // Check for keyboard input
-        if (_kbhit())
+        if (::_kbhit())
         {
-            ch = _getch();
+            ch = ::_getch();
             if (ch == 27)   // ESC key
                 break;
         }
