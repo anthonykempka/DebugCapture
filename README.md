@@ -12,13 +12,16 @@ Windows applications can send debug output using the WIN32 API `OutputDebugStrin
 
 See more about `OutputDebugString()` below:
 
-#### ASCII version of the OutputDebugString() API: 
+#### ASCII version of the API OutputDebugStringA()
 https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringa 
 
-#### UNICODE version of the OutputDebugString() API: 
+#### UNICODE version of the API OutputDebugStringW()
 https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw 
 
 ### Example Windows application code using the OutputDebugString() API
+In the example below, since the project was built with UNICODE flag, the `OutputDebugString()` function is defined as `OutputDebugStringW()`
+
+It is easy to identify 
 ```cpp
 int main()
 {
@@ -37,11 +40,11 @@ int main()
         // Output to console
         wcout << wStr << endl;
 
-        Sleep(1000);
+        ::Sleep(1000);
         // Check for keyboard input
-        if (_kbhit())
+        if (::_kbhit())
         {
-            ch = _getch();
+            ch = ::_getch();
             if (ch == 27)   // ESC key
                 break;
         }
