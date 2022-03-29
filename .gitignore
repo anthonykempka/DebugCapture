@@ -33,3 +33,10 @@
 
 # Visual Studio Files & Directories
 *.vs
+*.tlog
+*.log
+*.pdb
+*.ipdb
+*.recipe
+*.lastbuildstate
+*.iobj
