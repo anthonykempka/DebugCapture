@@ -10,20 +10,23 @@ There are two Visual Studio 2019 solutions in this example:
 
 Windows applications can send debug output using the WIN32 API `OutputDebugString()` and later capture the debug string using a combination of `DebugActiveProcess()` and `ReadProcessMemory()`
 
-#### WIN32 Debug Functions
+## WIN32 Debug Functions
 Here is the link to the official Microsoft reference for Windows debugging functions.  
 
 https://docs.microsoft.com/en-us/windows/win32/debug/debugging-functions  
-\
-\
+
+
+### OutputDebugString() ASCII and UNICODE
 Win32 `OutputDebugString()` comes in two variations supporting either ASCII or UNICODE strings.
 
-#### ASCII version of the API OutputDebugStringA()
-https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringa 
-
-#### UNICODE version of the API OutputDebugStringW()
-https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw 
-
+#### OutputDebugStringA("ASCII debug text here")  
+https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringa  
+ 
+ 
+#### OutputDebugStringW(L"UNICODE debug text here")  
+https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw  
+ 
+ 
 ### Example Windows application code using the OutputDebugString() API
 In the example below, the project was built with UNICODE flag, therefore `OutputDebugString()` function is defined as `OutputDebugStringW()` and the source code is in [DebugCaptureCode](https://github.com/anthonykempka/DebugCapture/tree/main/DebugCaptureCode)
 
