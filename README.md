@@ -11,9 +11,12 @@ There are two Visual Studio 2019 solutions in this example:
 Windows applications can send debug output using the WIN32 API `OutputDebugString()` and later capture the debug string using a combination of `DebugActiveProcess()` and `ReadProcessMemory()`
 
 #### WIN32 Debug Functions
-https://docs.microsoft.com/en-us/windows/win32/debug/debugging-functions 
+Here is the link to the official Microsoft reference for Windows debugging functions.  
 
-Win32 `OutputDebugString()` comes in two variations aupporting either ASCII or UNICODE strings.
+https://docs.microsoft.com/en-us/windows/win32/debug/debugging-functions  
+\
+\
+Win32 `OutputDebugString()` comes in two variations supporting either ASCII or UNICODE strings.
 
 #### ASCII version of the API OutputDebugStringA()
 https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringa 
