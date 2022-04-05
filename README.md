@@ -2,7 +2,7 @@
 This code is an example of how to capture debug output generated using the Win32 API `OutputDebugString()`
 
 There are two Visual Studio 2019 solutions in this example:
-1. [DebugCaptureCode](https://github.com/anthonykempka/DebugCapture/tree/main/DebugCaptureCode) is an MFC dialog application to capture debug output from a running process
+1. [DebugCaptureCode](https://github.com/anthonykempka/DebugCapture/tree/main/DebugCaptureCode) is an MFC dialog application that captures debug output from a running process
 2. [DebugOutputConsoleApp](https://github.com/anthonykempka/DebugCapture/tree/main/DebugOutputConsoleApp) is a C++ console application that generates test debug output using OutputDebugString()
 
 
